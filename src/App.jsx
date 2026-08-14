@@ -12,7 +12,7 @@ const products = [
 ].map((p,i)=>({id:i+1,name:p[0],category:p[1],price:p[2],image:`/products/${p[3]}`,tag:i<3?'New':'',sizes:['S','M','L','XL']}))
 const money=n=>`US$${n.toFixed(2)}`
 
-function Sculpture(){return <Canvas camera={{position:[0,0,4.8],fov:44}}><ambientLight intensity={2}/><directionalLight position={[3,4,5]} intensity={3}/><Float speed={1.5} rotationIntensity={.6} floatIntensity={.7}><mesh rotation={[.5,.8,.2]}><torusKnotGeometry args={[1,.28,180,24]}/><meshStandardMaterial color="#d7d1c7" roughness={.3} metalness={.08}/></mesh></Float><OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={1}/></Canvas>}
+function Sculpture(){return <Canvas camera={{position:[0,0,6.4],fov:40}} dpr={[1,1.75]}><ambientLight intensity={1.8}/><directionalLight position={[4,5,6]} intensity={2.4}/><Float speed={1.25} rotationIntensity={.35} floatIntensity={.35}><mesh rotation={[.35,.65,.15]} scale={.92}><torusKnotGeometry args={[1,.25,180,24]}/><meshStandardMaterial color="#d5d0c7" roughness={.42} metalness={.04}/></mesh></Float><OrbitControls enableZoom={false} enablePan={false} enableDamping autoRotate autoRotateSpeed={.65}/></Canvas>}
 
 export default function App(){
  const [query,setQuery]=useState(''),[cat,setCat]=useState('All'),[sort,setSort]=useState('Featured'),[cart,setCart]=useState([]),[wish,setWish]=useState([]),[drawer,setDrawer]=useState(false),[checkout,setCheckout]=useState(false),[paid,setPaid]=useState(false),[filters,setFilters]=useState(false)
